@@ -1,0 +1,23 @@
+export const USERS = [
+  {
+    id: 1,
+    name: "Nizam"
+  },
+  {
+    id: 2,
+    name: "Jhon"
+  },
+  {
+    id: 3,
+    name: "Cris"
+  }
+  ,
+  {
+    id: 4,
+    name: "Spider"
+  },
+  {
+    id: 5,
+    name: "Rahul"
+  }
+]
