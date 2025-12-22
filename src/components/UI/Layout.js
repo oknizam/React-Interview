@@ -12,7 +12,7 @@ const Layout = () => {
       gap: "10px",
     }}>
       <Header >
-        <h4>This is header </h4>
+        <h4>This is header (Composed component with header, content and Footer) </h4>
       </Header>
       <Content>
         Here Layout Content
