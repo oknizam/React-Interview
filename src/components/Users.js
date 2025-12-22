@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import InputBox from "./InputBox";
+import InputBox from "./UI/InputBox";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -7,11 +7,17 @@ const Users = () => {
 
   useEffect(() => {
     (async () => {
-      let response = await fetch('https://json-placeholder.mock.beeceptor.com/users');
-      response = await response.json();
-      if (response) {
-        setUsers(response)
+      try {
+        let response = await fetch('https://json-placeholder.mock.beeceptor.com/users');
+        response = await response.json();
+        if (response) {
+          setUsers(response)
+        }
       }
+      catch (err) {
+        console.error("user api call error", err)
+      }
+
     })(); // immedietely invoked function
 
     let timeout = setTimeout(() => {

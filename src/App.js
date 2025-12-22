@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
+import TodoList from './components/TodoList';
 import CommonComponent from './components/UI/CommonComponent';
 import ControlledComponent from './components/UI/ControlledComponent';
 import Form from './components/UI/Form';
@@ -8,7 +9,7 @@ import Layout from './components/UI/Layout';
 import List from './components/UI/List';
 import ThemeToggle from './components/UI/ThemeToggle';
 import UnControlledComponent from './components/UI/UnControlledComponent';
-import Users from './components/UI/Users';
+import Users from './components/Users';
 
 export const ThemeContext = createContext();
 
@@ -40,6 +41,8 @@ function App() {
         <UnControlledComponent />
         <hr />
         <Users />
+        <hr />
+        <TodoList />
       </div>
     </ThemeContext.Provider>
   );

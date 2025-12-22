@@ -96,6 +96,20 @@ Check users component -> handling search with user list use only when dependency
 
 Check counter Counter component , use when passing as props to other components , use only when dependency array values changes less frequently and also child components should be memoized the only use
 
+# 32. Context API
+
+CHeck Theme toggle and app.js
+
+# 33. Custom Hook
+
+Custom hook is used create function which handle functionlity , return value which is shared across other components, we can create custom hooks for api call, debounce, throttle many things 
+
+Custom Hook Rules
+  1. Custom hook should start with use, because react undersatnd hook with use naming conventions
+  2. Allways call hooks on top of component
+  3. Custom hooks can be used inside other hooks or/ in components not in normal functions
+  4. Custom hook share logic, not state
+
 
 
 

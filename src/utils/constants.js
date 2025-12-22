@@ -21,3 +21,8 @@ export const USERS = [
     name: "Rahul"
   }
 ]
+
+
+export const apiPaths = {
+  todoAPI: 'https://json-placeholder.mock.beeceptor.com/todos'
+}

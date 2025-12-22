@@ -11,3 +11,11 @@ td {
   padding: 8px 12px;
   text-align: left;
 }
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
