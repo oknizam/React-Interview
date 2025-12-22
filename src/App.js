@@ -1,9 +1,12 @@
 import './App.css';
 import Counter from './components/Counter';
 import CommonComponent from './components/UI/CommonComponent';
+import ControlledComponent from './components/UI/ControlledComponent';
 import Form from './components/UI/Form';
 import Layout from './components/UI/Layout';
 import List from './components/UI/List';
+import UnControlledComponent from './components/UI/UnControlledComponent';
+import Users from './components/UI/Users';
 
 function App() {
   return (
@@ -19,6 +22,12 @@ function App() {
       <Form />
       <hr />
       <CommonComponent />
+      <hr />
+      <ControlledComponent />
+      <hr />
+      <UnControlledComponent />
+      <hr />
+      <Users />
     </div>
   );
 }

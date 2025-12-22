@@ -61,8 +61,42 @@ Check Common Component
   `Child -> Parent` -> click happens child onClick
 Check Common Component
 
-# 19. stopPropogation 
+# 21. stopPropogation 
 
 Check Common Component
+
+# 22. Controlled Components
+
+Check ControlledComponent
+
+# 23. UnControlled Components
+
+Check UnControlledComponent
+
+# 24. Refs vs Controlled Components
+If u are having only one ref in ur componet which treated as uncontrolled component
+
+# 25. useState
+
+# 26. useEffect
+
+# 27. useEffect cleanup
+
+# 28  Dependency Array
+
+# 29. useRef 
+  check un controlled component
+
+# 30. useMemo 
+
+Check users component -> handling search with user list use only when dependency is getting changed less frequently and also don't use for smaller calculations, for smaller inputs
+
+
+# 31. useCallback
+
+Check counter Counter component
+
+
+
 
 
