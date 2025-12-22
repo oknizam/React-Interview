@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-const Button = ({ onClick, buttonLabel }) => {
+const Button = ({ onClick, buttonLabel, type = "", styles = {} }) => {
   return (
-    <button onClick={onClick}>{buttonLabel}</button>
+    <button style={styles} type={type} onClick={onClick}>{buttonLabel}</button>
   )
 }
 

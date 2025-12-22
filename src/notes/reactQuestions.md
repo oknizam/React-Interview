@@ -32,5 +32,26 @@ check layout component
 
 # 11. Keys in lists
 
+# 12. State
+# 13. Props
+# 14. State vs Props
+# 15. Why state should not update directly
+
+React understand or detect changes only when state value is get updated wit setter functions , if we are updating value directly value will be updaed but react will not detect this, re-render of component will not hapeen, this majorely affect pure components
+
+# 16. Lifting state
+
+lets take example three components: Parent, ChildA , ChildB
+
+If we are using state variables inside ChildA then we are not able to access it in ChildB , Parent component `we can achive this by using callback`, but simple way is move state values to parent and pass it to both child this is what we called as Lifting state
+
+# 17. Props Drilling
+
+Props drilling is related to passing data to children by props, if we have one Parent compoent and n children components if nth or n-1 children needs data it has to pass throgh all n components to reach n , this what we call it as Props Drilling, we can resolve this by `Redux, Context api`
+
+# 18. Prevent default
+
+Check Form component
+
 
 
