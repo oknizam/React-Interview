@@ -26,8 +26,9 @@ const Users = () => {
   }, []);
 
   const filteredUsers = useMemo(() => {
-    return users.filter(({ name, email, company, country }) => name?.toLowerCase().includes(searchText) || email?.toLowerCase().includes(searchText) ||
-      company?.toLowerCase().includes(searchText) || country?.toLowerCase().includes(searchText))
+    const search = searchText?.toLowerCase();
+    return users.filter(({ name, email, company, country }) => name?.toLowerCase().includes(search) || email?.toLowerCase().includes(search) ||
+      company?.toLowerCase().includes(search) || country?.toLowerCase().includes(search))
   }, [users, searchText])
 
 
