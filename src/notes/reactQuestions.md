@@ -94,7 +94,7 @@ Check users component -> handling search with user list use only when dependency
 
 # 31. useCallback
 
-Check counter Counter component
+Check counter Counter component , use when passing as props to other components , use only when dependency array values changes less frequently and also child components should be memoized the only use
 
 
 
