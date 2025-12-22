@@ -18,6 +18,7 @@ const Form = () => {
 
   return (
     <>
+      <h4>Preventdefault with form and anchor element</h4>
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <InputBox label="User name" value={userName} onChange={(e) => setUserName(e.target.value)} />
         <InputBox label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />

@@ -53,5 +53,16 @@ Props drilling is related to passing data to children by props, if we have one P
 
 Check Form component
 
+# 19. Event Capturing
+  `Parent -> Child` -> click happens child onClickCapture
+Check Common Component
+
+# 20. Event Capturing
+  `Child -> Parent` -> click happens child onClick
+Check Common Component
+
+# 19. stopPropogation 
+
+Check Common Component
 
 
