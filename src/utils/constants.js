@@ -24,5 +24,7 @@ export const USERS = [
 
 
 export const apiPaths = {
-  todoAPI: 'https://json-placeholder.mock.beeceptor.com/todos'
+  todoAPI: "https://json-placeholder.mock.beeceptor.com/todos",
+  postsAPI: "https://json-placeholder.mock.beeceptor.com/posts",
+  usersAPI: "https://json-placeholder.mock.beeceptor.com/users"
 }

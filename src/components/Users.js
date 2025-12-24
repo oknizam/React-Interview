@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
+import useDebounce from "../hooks/useDebounce";
+import { apiPaths } from "../utils/constants";
 import InputBox from "./UI/InputBox";
 
 const Users = () => {
@@ -8,7 +10,7 @@ const Users = () => {
   useEffect(() => {
     (async () => {
       try {
-        let response = await fetch('https://json-placeholder.mock.beeceptor.com/users');
+        let response = await fetch(apiPaths.usersAPI);
         response = await response.json();
         if (response) {
           setUsers(response)
@@ -31,11 +33,38 @@ const Users = () => {
 
   }, []);
 
+  const searchedValue = useDebounce(searchText, 1000);
+
   const filteredUsers = useMemo(() => {
-    const search = searchText?.toLowerCase();
+    const search = searchedValue?.toLowerCase();
     return users.filter(({ name, email, company, country }) => name?.toLowerCase().includes(search) || email?.toLowerCase().includes(search) ||
       company?.toLowerCase().includes(search) || country?.toLowerCase().includes(search))
-  }, [users, searchText])
+  }, [users, searchedValue]);
+
+
+  const debounceFunc = (callback, delay = 300) => {
+    let timeout = null;
+    return function (...args) {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      timeout = setTimeout(() => {
+        callback(...args)
+      }, delay)
+
+    }
+  }
+
+  const debounceSearch = useMemo(() => debounceFunc((search) => {
+    console.log("api call for debounce without custom hook", search)
+  }, 1000), [])
+
+  useEffect(() => {
+    if (searchText) {
+      debounceSearch(searchText);
+    }
+  }, [searchText, debounceSearch])
+
 
 
   return (

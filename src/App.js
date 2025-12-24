@@ -2,6 +2,7 @@ import { createContext, useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import ErrorBoundry from './components/ErrorBoundry';
+import LoadPosts from './components/LoadPosts';
 import TodoList from './components/TodoList';
 import CommonComponent from './components/UI/CommonComponent';
 import ControlledComponent from './components/UI/ControlledComponent';
@@ -46,6 +47,8 @@ function App() {
         <ErrorBoundry>
           <TodoList />
         </ErrorBoundry>
+        <hr />
+        <LoadPosts />
       </div>
     </ThemeContext.Provider>
   );

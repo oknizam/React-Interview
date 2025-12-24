@@ -177,6 +177,126 @@ Strict mode only enabled in development ,not in production, to check proper clea
 
 `mounting -> unmounting -> mounting`
 
+# 41. Virual Dom
+
+# 42. Diffing algorithem
+
+  element defination 
+  1. type
+  2. props
+  3. key
+  4. refrence
+
+  {"type":"div",props:{childrens:[{"type":"h2"},props:"Hello"]}} 
+
+  # using above DOM tree is constructed 
+
+  # Diff algo compare type 
+  1. if element is diffrent div -> span , replace with new 
+  2. if data / props change update it
+ 
+
+
+
+# 43. Reconcialation 
+
+  Same uses diffing algorithem
+
+  1. update virtual dom
+  2. then minimal changes moved to Real Dom 
+  3. Reflow 
+  4. Repaint
+
+# 44. How React renders
+
+  1. load index html
+  2. html and css
+  3. From html -> element defination contruct DOM tree and CSSOM tree
+  4. Render tree
+  5. Reflow (layout)
+  6. Reapint
+
+# 45. Reflow (layout calculation)  expensive task affect perfomence
+
+  1. Calculate dimensions (height, width, padding, margin, border)
+  2. when font size change reflow happens
+  3. when element added / removed
+  4. animations
+
+
+# 46. Repaint expensive task affect perfomence , less expensive compare to reflow
+
+  1. When background image / color change
+  2. transition effects
+  3. color change
+
+# 47. React fiber (16+)
+
+  React fiber is asynchronous , where before react fiber dom updation is synchronous, larger task will cause ui load take time, laggy inputs, we can't preioritize tasks
+
+  React fiber allow to pause, resume, interrupt VDOM update, resume it later , priorities task
+
+  1. click and type 1st priority
+  2. animations
+  3. data render
+
+  It has two phases
+  ------------------
+  1. update phase
+  2. commit phase
+
+
+# 48. Why virtual dom is faster 
+  because vitual dom will have tree like structure , it is json object elemen defination check diffing algorithem
+  so comparison is easy no tree construct here, and no `Reflow and Repaint`, this happens only in RealDOM
+
+# 49. Batch updates
+
+    React 16+  -> render once
+    setCount(c=> c+1);  
+    setFlag(f=> !f);
+
+    render twice  (promises, async opertions, api calls, timers)
+    --------------
+    setTimeout(()=>{
+    setCount(c=> c+1);  
+      setFlag(f=> !f);
+    },100)
+
+    React 18+ supports for (promises, async opertions, api calls, timers) -> render once
+    -----------------------------------------------
+    setTimeout(()=>{  
+      setCount(c=> c+1);  
+        setFlag(f=> !f);
+      },100)
+
+# 50. React memo (pure component shallow compare)
+    check button component
+
+# 51. Throttling
+
+  pause clicking / triggreing of any event for some duration , after that we enable it
+
+  Example: we have click event , in that event we are calling api, if don't add throttling user can click multiple times api will triggre that many times causes server load, basically we are preventing user to wait for response then we are allowing againt to click
+
+  Check LoadPosts component
+
+# 52. Debouncing
+
+  we will not perfom any taks until user leaves the input, aftet user levaes input in some miliseconds we trigger functionality
+
+  Example: Search input calls api , every text enter with debounce we stop triggreing api every text enter we will just trigger api ater user stop / leave typing
+
+  Check users component
+
+
+
+
+    
+
+
+
+
 
 
 
