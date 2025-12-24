@@ -171,5 +171,12 @@ CHeck todoList Component
   check error boundry component
 
 
+# 40. Strict Mode
+
+Strict mode only enabled in development ,not in production, to check proper cleanup is happeing , early issues
+
+`mounting -> unmounting -> mounting`
+
+
 
 
