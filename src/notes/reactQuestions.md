@@ -112,6 +112,63 @@ Custom Hook Rules
 
 CHeck todoList Component
 
+# 34. When not use useMemo / useCallback
+
+  -> small task 
+  -> dependency varables change very frequently
+  -> child component not memoized
+
+# 35. Component lifecycle phases
+
+  1. Mounting
+  2. Updating
+  3. Unmounting
+
+# 36. Mounting phases
+
+  # Class component
+  1. constructor() -> initalize methods, states, and bind method
+  2. getDerivedStateFromProps() -> before render
+  3. render() -> render dom data
+  4. componentDidMount()-> after component render (side effects (asyn logic, api call, background task, timers))
+
+  # funtional component
+  useEffect(()=>{}) - every render called
+  useEffect(()=>{},[]) -> only one time
+
+
+# 37. Updating phase
+
+  # Class component
+  1. constructor() -> initalize methods, states, and bind method
+  2. getDerivedStateFromProps() -> before render
+  3. shouldComponentUpdate() -> always true , u can make false to avoide re-rnder
+  4. render() -> render dom data
+  5. componentDidUpdate() -> same componentdid mount , we can get pre props and new props
+  6. getSnapShotBeforeUpdate()
+
+  # funtional component
+  useEffect(()=>{},[value]) called when value change
+
+# 38. Unmountning (cleanup, timers, event listners)
+
+  # Class component
+  componentWillunmount
+
+  # funtional component
+
+  useEffect(()=>{
+
+    return () =>{
+      cleanup logic
+    }
+  },[])
+
+# 39. Error Boundries
+
+  # class component
+
+  check error boundry component
 
 
 
