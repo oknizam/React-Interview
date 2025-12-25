@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 const useAPI = (url) => {
   const [loader, setLoader] = useState(false);
   const [data, setData] = useState(null);
-
   useEffect(() => {
     (async () => {
       try {

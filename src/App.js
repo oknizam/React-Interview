@@ -1,8 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext, lazy, Suspense, useState } from 'react';
 import './App.css';
+import CompanyData from './components/CompanyData';
 import Counter from './components/Counter';
 import ErrorBoundry from './components/ErrorBoundry';
-import LoadPosts from './components/LoadPosts';
 import TodoList from './components/TodoList';
 import CommonComponent from './components/UI/CommonComponent';
 import ControlledComponent from './components/UI/ControlledComponent';
@@ -20,6 +20,9 @@ function App() {
   const toggleMode = () => {
     setMode((prev) => prev === "dark" ? "" : "dark");
   }
+
+  const LoadPostsLazy = lazy(() => import("./components/LoadPosts"))
+
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
       <div style={{ backgroundColor: mode === 'dark' ? "#33335d" : "", padding: 10 }}>
@@ -48,7 +51,13 @@ function App() {
           <TodoList />
         </ErrorBoundry>
         <hr />
-        <LoadPosts />
+        <Suspense fallback={<div>loading....</div>}>
+          <LoadPostsLazy />
+        </Suspense>
+        <hr />
+        <ErrorBoundry>
+          <CompanyData />
+        </ErrorBoundry>
       </div>
     </ThemeContext.Provider>
   );

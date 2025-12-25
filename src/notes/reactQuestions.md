@@ -289,6 +289,48 @@ Strict mode only enabled in development ,not in production, to check proper clea
 
   Check users component
 
+# 53. Virualization (react window)
+
+render only the items which are visible in viewport , increase performence for larger list
+
+Check company data component
+
+# 55. Lazy rendering
+
+  Render component by using some flag like isVisible , loaders, it is diffrent from lazy loading
+  
+  Bundle is loaded initially only component get loaded when flag is enabled  like loaders , modals etc
+
+
+# 56. Code splitting
+
+  we have one component or multilple component which involves large functionality so we can split code 
+
+  Example: Dashboard component is involves large functionality if genrate bundle with this compoent bundle size will increase
+
+  Single bundle
+  -------------
+  main.js -> 30MB
+
+
+  code split
+  ----------
+  main.js - 10 mb
+  dashboard.js -> 10 mb
+  articles.js -> 5mb
+  comanyInfo.js -> 5mb
+
+  Code splitting increase initial load time because rest components get loaded when they need
+
+
+# 57. Lazy loading (React.lazy())
+
+code splitting can be achived using this react,lazy
+
+![alt text](image.png)
+
+
+
 
 
 
