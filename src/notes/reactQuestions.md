@@ -413,6 +413,28 @@ nested route should be relative not absolute
 
   pause, resume, itterupt and priorty updates, already discussed above
 
+  it will included in react app when we create root in starting
+
+  1. startTransition -> handle low priorityupdates
+
+    startTransition(()=>{
+      setFilteredData();
+    })
+
+  2. useTransition 
+    const [isPending, startTransition] = useTransition();
+    ->Avoide ui Freeze
+    ->show loading
+
+  3. useDeferredValue
+
+    const deferredSearch = useDeferredValue(searchTerm);
+
+    ->Renders stale value temporarily
+    ->smooth typinh
+
+
+
 # 74. Automatic batching
 
   react 18 less < batching is not supported for timers, promises ,api calls 
@@ -464,6 +486,65 @@ nested route should be relative not absolute
     console.log(e) => Synthetic
     console.log(e.nativeEvent) => native evnt
   }
+
+
+# 80. why keys should not be index
+
+  Example : with index List [
+    A -> 0
+    B -> 1
+    C -> 2
+  ];
+
+  if new `X` is added
+
+  List [
+    X -> 0 -> but react think A -> 0
+    A -> 1 -> but react think B -> 1
+    B -> 2 -> but react think C -> 2
+    C -> 3
+  ];
+
+  So this will confuse react , react will do unncessary renders , this will effect performce
+
+# 81. why use effect runs twice in strict mode
+
+  we know strict mode is only work in dev enviormnet , to check cleanup is happening , some errors are there or not
+
+  `mount-> unmount -> mount`
+
+# 82. Props mutation anti pattern
+
+  we know props are read only if we try to update props value it will through an error
+
+# 83. state mutation issues
+
+  we know react will understand state update only happens using setter functions, it will effect pure components
+
+# 84. Context re-render problem
+
+  Context api is used to share data between childrens 
+
+  if some of children not consuming data also get re -render
+
+  solution is
+  1. use-context-selctors -> select only value we are using
+  2. splitting context
+
+# 85. SEO challenges in react
+
+  1. We know react is spa it will initially load index html which has `root` element only
+    so bot crawlers/ web crawlers will not get any thing, search engine may not index content properly
+  2. No Dynamic meta tags
+      nextjs support `head` tag where we can add meta tags
+  3. spa routing
+
+    agiain not all data will be displayed so bot crawlers/ web crawlers will loss data
+
+  4. if js fails or slow crawlers skip execution
+  5. button navigation instead anchor element
+
+  solution serverside rendering
 
 
 
