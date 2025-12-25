@@ -1,0 +1,63 @@
+import { createContext, lazy, Suspense, useContext } from 'react';
+import CompanyData from '../components/CompanyData';
+import Counter from '../components/Counter';
+import ErrorBoundry from '../components/ErrorBoundry';
+import TodoList from '../components/TodoList';
+import CommonComponent from '../components/UI/CommonComponent';
+import ControlledComponent from '../components/UI/ControlledComponent';
+import Form from '../components/UI/Form';
+import Layout from '../components/UI/Layout';
+import List from '../components/UI/List';
+import ThemeToggle from '../components/UI/ThemeToggle';
+import UnControlledComponent from '../components/UI/UnControlledComponent';
+import ImageLazy from './UI/ImageLazy';
+
+export const ThemeContext = createContext();
+
+const Home = () => {
+
+  const LoadPostsLazy = lazy(() => import("../components/LoadPosts"));
+  const themeContext = useContext(ThemeContext);
+  const { mode } = themeContext;
+  return (
+    <div style={{ backgroundColor: mode === 'dark' ? "#33335d" : "", padding: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1 style={{ color: mode === 'dark' ? "#efefef" : "#33335d" }}> Hello React, I am Spidy!!!!</h1>
+        <ThemeToggle />
+        <a href='/about' style={{ color: "#000" }} >About</a>
+      </div>
+      <hr />
+      <a href='/users' style={{ color: "#000" }} >Click here to go users page</a>
+      <hr />
+      <Counter />
+      <hr />
+      <Layout />
+      <hr />
+      <List />
+      <hr />
+      <Form />
+      <hr />
+      <CommonComponent />
+      <hr />
+      <ControlledComponent />
+      <hr />
+      <UnControlledComponent />
+      <hr />
+      <ErrorBoundry>
+        <TodoList />
+      </ErrorBoundry>
+      <hr />
+      <Suspense fallback={<div>loading....</div>}>
+        <LoadPostsLazy />
+      </Suspense>
+      <hr />
+      <ErrorBoundry>
+        <CompanyData />
+      </ErrorBoundry>
+      <hr />
+      <ImageLazy url="/lazy-load-image.jpg" />
+    </div>
+  )
+}
+
+export default Home;

@@ -329,6 +329,155 @@ code splitting can be achived using this react,lazy
 
 ![alt text](image.png)
 
+Check load posts component in  app.js
+
+# 58. Suspense 
+suspense is used to show fallback ui until child component get loaded it used on top of lazyLoaded compoent
+Check load posts component in  app.js
+
+# 59. Routing (react-router-dom) seperate package
+
+Check app component and router component
+
+# 60. Route level lazy loading
+
+check users component and routes
+
+# 61. component level lazy loading (same which has component has time taking mostly in dashboards)
+
+# 62. Image lazy loading
+
+Check ImagelLazy component
+
+# 63. Client side routing 
+
+Implemeted in routes compoent
+
+# 64. react router
+
+# 65. Nested Route
+
+adding route inside another route
+
+check route
+nested route should be relative not absolute
+ <Outlet> component should be included in parent then only works
+
+ # 66. Route based code splitting
+
+ check Router component
+
+ # 67. Context api
+ 
+ Built in react statemenagement library 
+ check App.js 
+
+ # 68. Redux (redux toolkit)
+
+ redux flow
+ ----------
+ dispatch -> action -> reduces -> update store -> re-render components consuming state
+
+ Global State management library for react application , it works on three key features
+
+  1. Store -> single store object holds entire application data
+  2. Actions -> tells what action to be performed
+  3. reducer -> perorms action
+
+  Redux tool kit -> normal redux configuration is complicated, redux toolkit make it simpler
+
+# 69. Redux middle ware
+
+  redux provides middleware support for handling sideeffects
+
+  1. Async opertions
+  2. Api calls
+  3. Timers
+
+# 70, Middleware types
+
+  1. Redux Thunk -> perform async opertions using action functions
+  2. Redux saga -> perform async opertions using genrator functions
+
+# 71. contextAPI vs redux
+
+  1. context api is light weight , it is built in. redux is sepearate package
+  2. context api does not support middle ware. Redux supports middle ware
+  3. Context api for small apps. Redus is for large apps
+
+# 72. when not use redux
+
+  Smaller apps , increase app size 
+
+# 73. Concurrent rendering (React fiber 16+)
+
+  pause, resume, itterupt and priorty updates, already discussed above
+
+# 74. Automatic batching
+
+  react 18 less < batching is not supported for timers, promises ,api calls 
+
+  React 18+ supports
+
+# 75. Streaming SSR
+
+    Initially render page -> download data -> return it to browser as webpage
+
+    using streming SSR
+    -------------------
+    send shell html -> send data by chunk, so progressively data visible to user
+   
+    used in nextjs
+
+# 76. React server components (nextjs)
+
+  basically next js loads all components on server by default, we have use  `use client` to make it client interactive
+
+# 77. Shadow Dom
+
+  It encapsulate html, style, javscript and ut will not disturb outside html, and also this will not be affected from outside html
+
+  example: <input>,<select>,<button> are implemnted by shadow dom (similar to react components)
+
+  ![alt text](image-1.png)
+
+  enable this to see shadow dom in elements
+
+# 78. Event delegation
+
+  If we rendering list of items , which has same event listner what event delegation do is add event listner to parent, so it will synchronousely bubble child to parent
+
+  1. delegation will not applied for immedietely happening events
+  2. not for `focus` and `blur` events because they won't bubble
+
+# 79. Synthetic events vs native events
+
+  we know in js click event will be written like `onclick` , most browser have same sytax but some of them `click` so react created a wrapper over them and use `onClick` event 
+
+  it has som propoties
+  1. e.target
+  2. e.current
+  3. e.stopPropagation
+  4. e.preventDefault
+
+  example: function handleClick (e){
+    console.log(e) => Synthetic
+    console.log(e.nativeEvent) => native evnt
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
