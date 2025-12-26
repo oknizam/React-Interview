@@ -29,6 +29,8 @@ const Home = () => {
       <hr />
       <a href='/users' style={{ color: "#000" }} >Click here to go users page</a>
       <hr />
+      <a href='/todo' style={{ color: "#000" }} >Click here to todo app</a>
+      <hr />
       <Counter />
       <hr />
       <Layout />
@@ -55,7 +57,10 @@ const Home = () => {
         <CompanyData />
       </ErrorBoundry>
       <hr />
-      <ImageLazy url="/lazy-load-image.jpg" />
+      <>
+        <h3>Lazy image loading</h3>
+        <ImageLazy url="/lazy-load-image.jpg" />
+      </>
     </div>
   )
 }

@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import './App.css';
 import { ThemeContext } from "./components/Home";
 import AppRoutes from './components/Routes/Routes';
+import { Provider } from 'react-redux'
+import store from "./redux/store";
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -12,7 +14,9 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeContext.Provider value={{ mode, toggleMode }}>
-        <AppRoutes />
+        <Provider store={store}>
+          <AppRoutes />
+        </Provider>
       </ThemeContext.Provider>
     </BrowserRouter>
   );

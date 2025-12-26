@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import About from "../About";
 import Home from "../Home";
 import Portfolio from "../Portfolio";
+import Todo from "../Todo";
 import PageCenter from "../UI/PageCenter";
 
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/users" element={<Suspense fallback={<PageCenter>Loading ⚙️⚙️⚙️ ....!</PageCenter>}> {/* route based code splitting */}
         <LazyLoadUsers />
       </Suspense>} />
+      <Route path="/todo" element={<Todo />} />
     </Routes>
   )
 }
