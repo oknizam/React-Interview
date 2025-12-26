@@ -24,12 +24,13 @@ const UserListWithUseTransition = () => {
   };
 
 
-  return (<>
-    <h2>Search with useTransition</h2>
-    {isPending && <div>Filtering data....</div>}
-    <InputBox label="Searc here" onChange={handleChangeFilter} value={search} />
-    <List title="Users list" data={users} />
-  </>)
+  return (
+    <div>
+      <h2>2.Search with useTransition</h2>
+      {isPending && <div>Filtering data....</div>}
+      <InputBox label="Searc here" onChange={handleChangeFilter} value={search} />
+      <List title="Users list" data={users} />
+    </div>)
 
 }
 

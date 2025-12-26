@@ -20,11 +20,11 @@ const UsersWithTransition = () => {
   };
 
 
-  return (<>
-    <h2>Search with start transition</h2>
+  return (<div>
+    <h2>1.Search with start transition</h2>
     <InputBox label="Searc here" onChange={handleChangeFilter} value={search} />
     <List title="Users list" data={users} />
-  </>)
+  </div>)
 
 }
 

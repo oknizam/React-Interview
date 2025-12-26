@@ -10,11 +10,13 @@ const UserListWithDifferedValue = () => {
 
   const filterdUsers = USERS.filter((item) => item.name.toLowerCase().includes(deferredSearch.toLocaleLowerCase()))
 
-  return (<>
-    <h2>Search with useDeferredValue</h2>
-    <InputBox label="Searc here" onChange={(e) => setSearch(e.target.value)} value={search} />
-    <List title="Users list" data={filterdUsers} />
-  </>)
+  return (
+    <div>
+      <h2>3.Search with useDeferredValue</h2>
+      <InputBox label="Searc here" onChange={(e) => setSearch(e.target.value)} value={search} />
+      <List title="Users list" data={filterdUsers} />
+    </div>
+  )
 
 }
 
