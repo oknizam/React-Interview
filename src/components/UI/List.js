@@ -1,11 +1,11 @@
 import { USERS } from "../../utils/constants";
 
-const List = ({ list = USERS }) => {
+const List = ({ data = USERS, title = "Lists with keys" }) => {
 
   return (
     <>
-      <h4>Lists with keys</h4>
-      {list.map((item, _index) => <li key={item.id}>{item.name}</li>)}
+      <h4>{title}</h4>
+      {data.map((item, _index) => <li key={item.id}>{item.name}</li>)}
     </>
   )
 }

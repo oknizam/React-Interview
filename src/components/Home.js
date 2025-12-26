@@ -27,9 +27,9 @@ const Home = () => {
         <a href='/about' style={{ color: "#000" }} >About</a>
       </div>
       <hr />
-      <a href='/users' style={{ color: "#000" }} >Click here to go users page</a>
-      <hr />
-      <a href='/todo' style={{ color: "#000" }} >Click here to todo app</a>
+      <a href='/users' style={{ color: "#000" }} >Click here to go users page</a> <br />
+      <a href='/todo' style={{ color: "#000" }} >Click here to todo app</a> <br />
+      <a href='/concurrent-ui' style={{ color: "#000" }} >Click here to check Concurrent UI demo</a>
       <hr />
       <Counter />
       <hr />

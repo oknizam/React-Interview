@@ -1,26 +1,25 @@
 export const USERS = [
-  {
-    id: 1,
-    name: "Nizam"
-  },
-  {
-    id: 2,
-    name: "Jhon"
-  },
-  {
-    id: 3,
-    name: "Cris"
-  }
-  ,
-  {
-    id: 4,
-    name: "Spider"
-  },
-  {
-    id: 5,
-    name: "Rahul"
-  }
-]
+  { id: 1, name: "Aarav Sharma", email: "aarav.sharma@example.com", role: "Admin" },
+  { id: 2, name: "Diya Patel", email: "diya.patel@example.com", role: "User" },
+  { id: 3, name: "Rohan Verma", email: "rohan.verma@example.com", role: "User" },
+  { id: 4, name: "Ananya Iyer", email: "ananya.iyer@example.com", role: "Manager" },
+  { id: 5, name: "Kabir Mehta", email: "kabir.mehta@example.com", role: "User" },
+  { id: 6, name: "Sneha Rao", email: "sneha.rao@example.com", role: "User" },
+  { id: 7, name: "Arjun Singh", email: "arjun.singh@example.com", role: "Admin" },
+  { id: 8, name: "Pooja Nair", email: "pooja.nair@example.com", role: "User" },
+  { id: 9, name: "Vikram Malhotra", email: "vikram.malhotra@example.com", role: "Manager" },
+  { id: 10, name: "Neha Gupta", email: "neha.gupta@example.com", role: "User" },
+  { id: 11, name: "Rahul Khanna", email: "rahul.khanna@example.com", role: "User" },
+  { id: 12, name: "Ishita Choudhary", email: "ishita.choudhary@example.com", role: "Admin" },
+  { id: 13, name: "Siddharth Jain", email: "siddharth.jain@example.com", role: "User" },
+  { id: 14, name: "Meera Kulkarni", email: "meera.kulkarni@example.com", role: "User" },
+  { id: 15, name: "Kunal Bansal", email: "kunal.bansal@example.com", role: "Manager" },
+  { id: 16, name: "Aditi Mishra", email: "aditi.mishra@example.com", role: "User" },
+  { id: 17, name: "Nikhil Agarwal", email: "nikhil.agarwal@example.com", role: "User" },
+  { id: 18, name: "Ritika Soni", email: "ritika.soni@example.com", role: "User" },
+  { id: 19, name: "Manish Pandey", email: "manish.pandey@example.com", role: "Admin" },
+  { id: 20, name: "Shreya Bose", email: "shreya.bose@example.com", role: "User" }
+];
 
 
 export const apiPaths = {

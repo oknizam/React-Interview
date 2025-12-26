@@ -386,6 +386,8 @@ nested route should be relative not absolute
 
   Redux tool kit -> normal redux configuration is complicated, redux toolkit make it simpler
 
+  Check todoapp and todo slice
+
 # 69. Redux middle ware
 
   redux provides middleware support for handling sideeffects

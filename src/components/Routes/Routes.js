@@ -5,6 +5,8 @@ import Home from "../Home";
 import Portfolio from "../Portfolio";
 import Todo from "../Todo";
 import PageCenter from "../UI/PageCenter";
+import ConcurrentUI from "../ConcurrentDemos/ConcurrentUI";
+
 
 
 const AppRoutes = () => {
@@ -19,6 +21,7 @@ const AppRoutes = () => {
         <LazyLoadUsers />
       </Suspense>} />
       <Route path="/todo" element={<Todo />} />
+      <Route path="/concurrent-ui" element={<ConcurrentUI />} />
     </Routes>
   )
 }
