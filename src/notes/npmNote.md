@@ -52,6 +52,8 @@
   "react":"^18.0.1" -> when we do npm i , it will install latest minor and patch => "18.2.3"
   "react":"~18.0.1" -> when we do npm i , it will install latest patch => "18.0.3"
 
+# 7. React deployment to s3
+![alt text](<React Deployment s3 bucket.png>)
 
 
 
