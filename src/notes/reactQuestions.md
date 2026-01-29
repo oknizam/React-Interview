@@ -1,6 +1,33 @@
 # 1.JSX
 It supports jsx , allow to use / write html code in js
 
+const element = `<h1> hello </h1>`;
+<!-- jsx complied by bable into normal js -->
+
+const element = React.createElement("h1",props,"hello"); props -> {className:"abc", onClick : handleClick}
+
+-> bable will convert new js sytanx into older js sytanx
+  ex: arrow functions, promise, higher order functions (map, filter, reduce), Promise , object.assign
+
+
+rules :
+1. if we have multiple elements , there should be a parent element for them
+ <h1> hello <h1>
+ <span> subtitle <span> -> invalid
+<>
+<h1> hello <h1> 
+ <span> subtitle <span>  -> valid
+ </>
+
+2. className instead of class
+3. if ur using javscript with html { isLoggedIn && <Dashboard/>}
+
+4. Self closing tags
+    <img src="path" />
+
+
+
+
 # 2.Single Page Application (SPA)
 Meaning it is sinlge page that is index.html , using bundle it will render all react componets script which is added in index.html, it has root element from which we render all react components 
 
@@ -15,19 +42,43 @@ Meaning it is sinlge page that is index.html , using bundle it will render all r
 # 5. Server side rendering
     Some html like initial html rendered from server , directly get html , disply to user, increase initail load time 
 
+  1. Hydration -> react attaches event listeners to html
+  2. We will load only initial fdata from sever, header, footer , hero contetnt , initial list 
+
 # 6.Stateless components
   compomets which does not have their own state are stateless components, example like Card, button, icon, label
   check Button.js component 
+  -> Reausable components - buttons, cards , layouts which doesnot have life cycle and also useState will not be  dused
+
 # 7. Pure components 
+  componets which will re render only when their own props get changed, in functional components we can achive this by using memo
   check Button.js component 
 
 # 8. Composable components 
+
+  We divide large component into smaller one , use them inside one component (main) -> we call it as composed component
   Check Layout.js component
 
 # 9.Children props
+
+<Header>
+  <h1>
+  Some text (this is children props)
+  </h1>
+</Header>
+
+const Header = (props) =>{
+  
+ return (<>
+  {props.children}
+  </>)
+} 
+
+
 check layout component
 
 # 10. Fragments
+  Used to group multiple elements , without adding new dom node
   check Header component
 
 # 11. Keys in lists
