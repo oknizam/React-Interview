@@ -605,6 +605,13 @@ nested route should be relative not absolute
   solution serverside rendering
 
 
+# 86. Pagination vs Virtulisation
+
+  pagination -> pagination solves BE server load problem , n/w bandwidth  
+
+  virtualisation -> completly for frontend like if have larger list but we have fixed window size when we scroll it will append load all data what happens flickering will come in  ui if virtualisation not there, so virualisation solves if you scroll down new elements will be appended to list and older get removed 
+
+
 
 
 

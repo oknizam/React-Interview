@@ -11,6 +11,7 @@ import List from '../components/UI/List';
 import ThemeToggle from '../components/UI/ThemeToggle';
 import UnControlledComponent from '../components/UI/UnControlledComponent';
 import ImageLazy from './UI/ImageLazy';
+import LazyLoad from '../components/LazyLoad';
 
 export const ThemeContext = createContext();
 
@@ -61,6 +62,8 @@ const Home = () => {
         <h3>Lazy image loading</h3>
         <ImageLazy url="/lazy-load-image.jpg" />
       </>
+      <hr />
+      <LazyLoad />
     </div>
   )
 }
