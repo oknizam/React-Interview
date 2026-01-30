@@ -462,6 +462,9 @@ nested route should be relative not absolute
   1. context api is light weight , it is built in. redux is sepearate package
   2. context api does not support middle ware. Redux supports middle ware
   3. Context api for small apps. Redus is for large apps
+  4. examples context api -> theme , user session, localisation (launguage)
+  5. examples redux -> amzon , flipakrt , nextiva app
+
 
 # 72. when not use redux
 
