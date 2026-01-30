@@ -278,7 +278,7 @@ Strict mode only enabled in development ,not in production, to check proper clea
 # 46. Repaint expensive task affect perfomence , less expensive compare to reflow
 
   1. When background image / color change
-  2. transition effects
+  2. transition effects // smmoth change between state
   3. color change
 
 # 47. React fiber (16+)
@@ -287,14 +287,19 @@ Strict mode only enabled in development ,not in production, to check proper clea
 
   React fiber allow to pause, resume, interrupt VDOM update, resume it later , priorities task
 
+  React fiber break rendering into smaller chunks, prioritise , pause , resume chunks, which will not freeze ui
+  larger renders
+
+  rendering schedule like divinding rendering into smaller chunks
+
   1. click and type 1st priority
   2. animations
   3. data render
 
   It has two phases
   ------------------
-  1. update phase
-  2. commit phase
+  1. update phase -> render divinde into smaller chunks , priorities chunks, pause, resume chunks
+  2. commit phase -> final phase where changes are moved to real dom where actual tree get constrcucted
 
 
 # 48. Why virtual dom is faster 

@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import Button from "./UI/Button";
-
 const Counter = () => {
 
   const [count, setCount] = useState(0);
