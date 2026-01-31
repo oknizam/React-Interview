@@ -487,18 +487,42 @@ nested route should be relative not absolute
     ->Avoide ui Freeze
     ->show loading
 
-  3. useDeferredValue
+  3. useDeferredValue  // postpone
+
+    1. we can say debounce , but in debounce we have settimeout, we are delaying api call
+    2. but in deffered we don't have any specific delay time
+    3. useDeferredValue will not be used when we are performing search at API level
+    4. useDeferredValue is useful for FE performence optimize
 
     const deferredSearch = useDeferredValue(searchTerm);
 
     ->Renders stale value temporarily
     ->smooth typinh
 
+  4. Diffrence between startTranstion and useDeferredValue
+    1. startTranstion -> it will delay upadting states means non urgent rendering
+    2. useDeferredValue -> updated deferredSearch value slowely so that we cn use it later
 
 
 # 74. Automatic batching
 
+  React 16 > and < 18 will support only state update batching
+
+  setInput1(1); 
+  setInput2(2);  -> component re-render happens only once this we will call batching
+
+
+  setTimout(()=>{
+    setInput1(1);  -> if we are doing within timers or async calls automatic batching will not work
+    setInput2(2);
+  })
+
   react 18 less < batching is not supported for timers, promises ,api calls 
+
+  setTimout(()=>{
+    setInput1(1);  ->  automatic batching will work in react 18+
+    setInput2(2);
+  })
 
   React 18+ supports
 
@@ -520,7 +544,7 @@ nested route should be relative not absolute
 
   It encapsulate html, style, javscript and ut will not disturb outside html, and also this will not be affected from outside html
 
-  example: <input>,<select>,<button> are implemnted by shadow dom (similar to react components)
+  example: <input>,<select>,<audio>, <video>, <details> are implemnted by shadow dom (similar to react components)
 
   ![alt text](image-1.png)
 
@@ -530,12 +554,17 @@ nested route should be relative not absolute
 
   If we rendering list of items , which has same event listner what event delegation do is add event listner to parent, so it will synchronousely bubble child to parent
 
-  1. delegation will not applied for immedietely happening events
+  1. delegation will not applied for immedietely happening events -> In SSR , html got rendered but hydration is not done, but user clicks event this will not be delegated
   2. not for `focus` and `blur` events because they won't bubble
 
 # 79. Synthetic events vs native events
 
   we know in js click event will be written like `onclick` , most browser have same sytax but some of them `click` so react created a wrapper over them and use `onClick` event 
+
+  1. Native events -> click, change, scroll, keyDown etc
+  2. Sythentic events -> onCLick, onChange, onScroll, onKeyDown
+  3. React created a wrapper for events over native events called sythetic events
+  4. e.nativeElement
 
   it has som propoties
   1. e.target
@@ -616,12 +645,13 @@ nested route should be relative not absolute
 
 
 
+# 87. Hydration
 
-
-
-
-
-
+  1. Hydration will happens in SSR
+  2. we know when we are rendering content from SSR , HTML will get loaded from server, but there will be no client intercation like click, inputs or other events 
+  3. Hydration will attach events to html
+  4. like if we have click event but normal html <div> click </div> -> here no click events
+  5. after hydration <div onClick={()=>console.log("click")}> click </div>
 
 
 

@@ -8,6 +8,8 @@ const UserListWithDifferedValue = () => {
   const [search, setSearch] = useState("");
   const deferredSearch = useDeferredValue(search); // update it later
 
+  console.log("deferredSearch", deferredSearch)
+
   const filterdUsers = USERS.filter((item) => item.name.toLowerCase().includes(deferredSearch.toLocaleLowerCase()))
 
   return (
