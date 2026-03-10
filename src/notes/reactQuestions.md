@@ -108,6 +108,12 @@ Check Form component
   `top -> target` onClickCapture -> click happens child onClickCapture
 Check Common Component
 
+let say two components
+<div onClickCapture={onClickParent}>parent
+  <div onClickCapture={onClickChild} style={{padding:20}}>child</div>
+</div>
+on capture parent -> then child
+
 # 20. Event bubbling
   `target -> top` onClick -> click happens child onClick
 Check Common Component
@@ -316,7 +322,7 @@ Strict mode only enabled in development ,not in production, to check proper clea
     --------------
     setTimeout(()=>{
     setCount(c=> c+1);  
-      setFlag(f=> !f);
+    setFlag(f=> !f);
     },100)
 
     React 18+ supports for (promises, async opertions, api calls, timers) -> render once
@@ -663,11 +669,66 @@ nested route should be relative not absolute
 
 
 
-    
 
 
 
+𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁 (𝗖𝗼𝗿𝗲 𝗗𝗲𝗽𝘁𝗵)
+1. Explain the JavaScript event loop. Microtasks vs macrotasks?
+2. Implement Promise.all from scratch.
+3. Implement debounce and throttle.
+4. Explain closures with a real-world example.
+5. How does prototypal inheritance work?
+6. Difference between var, let, and const.
+7. Difference between == and ===.
+8. Explain shallow copy vs deep copy. Implement deep clone.
+9. How does this behave in arrow functions, class methods, and event handlers?
+10. Explain call, apply, and bind with use cases.
+
+𝗥𝗲𝗮𝗰𝘁 (𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗗𝗲𝗽𝘁𝗵)
+11. What is reconciliation? How does React diffing work?
+12. Why are keys important in lists?
+13. What causes unnecessary re-renders in React?
+14. Explain useEffect deeply. Cleanup? Dependency array pitfalls?
+15. Difference between useMemo and useCallback.
+16. When would you use React.memo?
+17. Controlled vs uncontrolled components.
+18. What is state batching? What changed in React 18?
+19. How does React Context work? When can it hurt performance?
+20. Build a custom hook like useDebounce or useFetch.
+
+𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 𝗦𝘆𝘀𝘁𝗲𝗺 𝗗𝗲𝘀𝗶𝗴𝗻 (𝗦𝗲𝗻𝗶𝗼𝗿 𝗥𝗼𝘂𝗻𝗱)
+21. Design an autocomplete search with debouncing and caching.
+22. Design an infinite scrolling feed.
+23. How would you optimize a slow React application?
+24. How would you improve Web Vitals (LCP, CLS, INP)?
+25. Design a reusable component library for a large team.
+26. How would you handle API failures and retries gracefully?
+27. How would you implement dark mode across the app?
+28. Redux vs Context vs Zustand, how do you decide in a large-scale application?
+29. How would you prevent XSS, CSRF, token leakage, and secure authentication flows in a frontend app?
+30. How would you design SSR/SSG or hydration strategy for a React application? When would you use each?
+
+𝗗𝗦𝗔 (𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 𝗥𝗼𝘂𝗻𝗱)
+31. Maximum sum subarray (Kadane’s algorithm).
+32. Sliding window maximum.
+33. Merge k sorted linked lists.
+34. Detect a cycle in a linked list.
+35. Longest palindromic substring.
+36. Design and implement an LRU Cache.
+
+𝗛𝗶𝗿𝗶𝗻𝗴 𝗠𝗮𝗻𝗮𝗴𝗲𝗿 𝗥𝗼𝘂𝗻𝗱
+37. Explain a frontend project you built end-to-end.
+38. Describe the hardest production bug you fixed.
+39. How do you balance performance vs feature delivery?
+40. How do you handle disagreements in technical decisions?
 
 
-
-
+Here are some resources to help you out:
+1. MDN Web Docs
+ - https://lnkd.in/d3Ux-cqV
+2. Scrimba React Course
+ - https://lnkd.in/d8GyaqDR
+3. Frontend Interview Handbook
+ - https://lnkd.in/dafdY3GP
+4. The Odin Project
+ - https://lnkd.in/dXTUSXRZ
