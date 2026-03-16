@@ -732,3 +732,45 @@ Here are some resources to help you out:
  - https://lnkd.in/dafdY3GP
 4. The Odin Project
  - https://lnkd.in/dXTUSXRZ
+
+
+# 88. React portals
+
+Allow to render component outside of its parent DOM heirachy, but still it remains part of same react component tree
+
+This is useful when use ui component like Modals, Tootips, dropsowns or popups should appears outside of its parent container
+
+we try to render these components inside parent problems
+
+1. overflow: hidden
+2. z-index issues
+3. layout restrictions 
+
+will not allow this component get render outside
+
+React portal is solution where we can render these components outside parent component
+
+sytax :  ReactDom.createPortal(modalCode, container);
+
+1. modal code -> whatever html code ur rendering , 
+2. conatiner -> element where we are rendering
+
+
+bubbling will work throught react tree
+
+check Modal.js 
+
+
+# 89. PropTypes or prop validations
+
+1. This is props type validation , menas lets i have User component  
+2. It is accepting name props 
+3. let's say some one passed value 10 for name props, so we need here string value but got number value
+4. throw an error that is called prop types 
+5. we know type check will be done at complie time in typescript 
+6. proptype check will be done at runtime 
+7. this is required if we are writting js components not for typescript component
+8. typescript and propsTypes solves same problems
+9. propstype run time warning
+10. typescript check complie time error
+

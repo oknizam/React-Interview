@@ -1,4 +1,4 @@
-import { createContext, lazy, Suspense, useContext } from 'react';
+import { createContext, lazy, Suspense, useContext, useState } from 'react';
 import CompanyData from '../components/CompanyData';
 import Counter from '../components/Counter';
 import ErrorBoundry from '../components/ErrorBoundry';
@@ -12,10 +12,15 @@ import ThemeToggle from '../components/UI/ThemeToggle';
 import UnControlledComponent from '../components/UI/UnControlledComponent';
 import ImageLazy from './UI/ImageLazy';
 import LazyLoad from '../components/LazyLoad';
+import Modal from './UI/Modal';
+import User from './UI/User';
 
 export const ThemeContext = createContext();
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => setOpen(false);
 
   const LoadPostsLazy = lazy(() => import("../components/LoadPosts"));
   const themeContext = useContext(ThemeContext);
@@ -64,6 +69,19 @@ const Home = () => {
       </>
       <hr />
       <LazyLoad />
+      <hr />
+      <>
+        <h3> React portal </h3>
+        <Modal isOpen={open} onClose={handleClose}>
+          <h4>Hello React portal</h4>
+        </Modal>
+        <button onClick={() => setOpen(true)}>Open Custom Modal</button>
+      </>
+      <hr />
+      <>
+        <h3> React Prop types </h3>
+        <User name={"Nizam"} age={28} />
+      </>
     </div>
   )
 }
