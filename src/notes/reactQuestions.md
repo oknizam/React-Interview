@@ -774,3 +774,20 @@ check Modal.js
 9. propstype run time warning
 10. typescript check complie time error
 
+
+# 90. Virtualisation or react window
+
+  1. React window -> which is using libraray
+  2. Custom virtualisation
+
+    1. Window height -> 400px
+    2. Item height -> 40px
+    3. scrollTop -> which will give item postion to go top
+    4. totalHeight -> itemHeight * items count
+    5. startIndex -> Math.floor(scrollTop/itemHeight);
+    6. visibleCount -> Math.ceil(height/itemHeight);
+    7. visibleItems -> slice(startIndex,startIndex+visibleCount+1) -> +1 for avoiding flickering
+    8. offsetY -> startIndex * itemHeight -> smooth scroll
+    9. div -> enable verticalScroll , height : window height
+    10. div -> to enable scrolling  height:totalHeight
+    11. div -> smooth scroll transform: `tranformY(offsetY px)`
