@@ -791,3 +791,5 @@ check Modal.js
     9. div -> enable verticalScroll , height : window height
     10. div -> to enable scrolling  height:totalHeight
     11. div -> smooth scroll transform: `tranformY(offsetY px)`
+
+# 91. Custom progress bar

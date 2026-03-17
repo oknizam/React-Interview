@@ -14,6 +14,7 @@ import ImageLazy from './UI/ImageLazy';
 import LazyLoad from '../components/LazyLoad';
 import Modal from './UI/Modal';
 import User from './UI/User';
+import ProgressBar from './UI/HorizontalProgressBar';
 
 export const ThemeContext = createContext();
 
@@ -81,6 +82,13 @@ const Home = () => {
       <>
         <h3> React Prop types </h3>
         <User name={"Nizam"} age={28} />
+      </>
+      <hr />
+      <>
+        <h3> Horizontal Progress Bars </h3>
+        <ProgressBar width="60%" background="green" /> <br />
+        <ProgressBar width="70%" background="linear-gradient(to right, green 50%, red 50%)" /><br />
+        <ProgressBar width="100%" background="linear-gradient(to right, green, red, blue, orange,yellow)" />
       </>
     </div>
   )
