@@ -890,6 +890,8 @@ check Modal.js
 
 # 97. Higher order components
 
+  component which accepts another component as argument and return new component
+
 # 98. forwardref
 
 # 99. Create todo app using pure js

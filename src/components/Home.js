@@ -15,6 +15,7 @@ import LazyLoad from '../components/LazyLoad';
 import Modal from './UI/Modal';
 import User from './UI/User';
 import ProgressBar from './UI/HorizontalProgressBar';
+import TestHOC from './TestHOC';
 
 export const ThemeContext = createContext();
 
@@ -90,6 +91,9 @@ const Home = () => {
         <ProgressBar width="70%" background="linear-gradient(to right, green 50%, red 50%)" /><br />
         <ProgressBar width="100%" background="linear-gradient(to right, green, red, blue, orange,yellow)" />
       </>
+
+      <hr />
+      <TestHOC name="nizam" />
     </div>
   )
 }
