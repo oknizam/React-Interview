@@ -16,6 +16,7 @@ import Modal from './UI/Modal';
 import User from './UI/User';
 import ProgressBar from './UI/HorizontalProgressBar';
 import TestHOC from './TestHOC';
+import CounterComponent from './CounterComponent';
 
 export const ThemeContext = createContext();
 
@@ -94,6 +95,8 @@ const Home = () => {
 
       <hr />
       <TestHOC name="nizam" />
+      <hr />
+      <CounterComponent />
     </div>
   )
 }

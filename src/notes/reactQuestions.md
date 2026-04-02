@@ -945,3 +945,10 @@ check Modal.js
   9. Rate limiting DDOS
   10. Avoide inline scripts
     
+
+# 103. Unit and integration
+
+1. jest -> javascript libraray which already comes with RTL 
+2. test, expect -> jest .toHaveTextContent();
+3. screen, render and if any click events fireEvent from RTL
+
