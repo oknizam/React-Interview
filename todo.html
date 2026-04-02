@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .container {
+      width: 300px;
+    }
+    input {
+      width: 70%;
+      padding: 8px;
+    }
+    button {
+      padding: 8px;
+      margin-left: 5px;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Todo App</h2>
+  <input id="todoInput" placeholder="Add todo..." />
+  <button onclick="addTodo()">Add</button>
+
+  <ul id="todoList"></ul>
+</div>
+
+<script>
+  const input = document.getElementById("todoInput");
+  const list = document.getElementById("todoList");
+
+  function addTodo() {
+    const value = input.value.trim();
+    if (!value) return;
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = value;
+
+    // Toggle complete
+    span.onclick = () => {
+      span.classList.toggle("completed");
+    };
+
+    // Delete button
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "X";
+    delBtn.onclick = () => {
+      list.removeChild(li);
+    };
+
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    list.appendChild(li);
+
+    input.value = "";
+  }
+</script>
+
+</body>
+</html>
