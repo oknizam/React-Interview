@@ -467,7 +467,7 @@ nested route should be relative not absolute
 
   1. context api is light weight , it is built in. redux is sepearate package
   2. context api does not support middle ware. Redux supports middle ware
-  3. Context api for small apps. Redus is for large apps
+  3. Context api for small apps. Redux is for large apps
   4. examples context api -> theme , user session, localisation (launguage)
   5. examples redux -> amzon , flipakrt , nextiva app
 
@@ -793,3 +793,153 @@ check Modal.js
     11. div -> smooth scroll transform: `tranformY(offsetY px)`
 
 # 91. Custom progress bar
+
+
+# 92. Virtul DOM object structure
+
+  <div className="box" id="container">
+      <h1 className="heading">Hello world</h1>
+  </div>
+
+
+  1. VDOM object: 
+
+   {
+    type:"div",
+    props:{
+      id:"container",
+      className:"box",
+      children:[
+        {
+          type:"h1",
+          props:{
+            className:"heading",
+            children: "Hello world"
+          }
+        }
+      ]
+    }
+   }
+
+
+# 93. Reconcillation
+
+  1. Comparing old DOM and bew DOM
+
+  2. When props/ state change component re render
+  3. Create new VDOM and compare it with Old VDOM -> update only changed parts
+  4. Uses diffing algorithem to comapre
+  5. if only value updated , just update value
+  6. if element got change , replace with new element and its child elements are re-renderd
+  7. Keys -> if we have list of items to render in ui we will iterate elements and show them
+  8. why use keys because to avoide unnecessary DOM updates
+
+  9. exmaple 1
+    ["A","B","C"] -> ["A","X","C"]
+
+    if we don't use keys
+
+    items.map((item)=><div>{item}</div>)
+
+    here it will create three dom upadtes instead of only one
+
+
+  10. example 2
+      [
+        {
+          id:1,
+          value:"A"
+        },
+        {
+          id:2,
+          value:"B"
+        },
+        {
+          id:3,
+          value:"C"
+        }
+      ]
+
+        items.map((item)=><div key={item.id}>{item}</div>)
+
+        if B->X only the element which got updated will be updated in DOM
+
+        and also we have to use unique values which will not change every render for keys, because if every re-render keys change then no use for keys , performence will be affected
+
+
+# 94. Avoide un-necessary re-renderes
+
+  1. Memo
+  2. useMemo
+  3. useCallback
+  4. Avoide using inline functions
+
+    <div onClick={()=> handleClick()}> // wrong
+
+    <div onClick={handleClick}> // good
+
+  5. Don't use state if we are not using that value in UI, use ref store values
+  6. use keys for list
+  7. split components 
+
+
+# 95. form in react
+
+# 96. Infinite scroll
+
+
+# 97. Higher order components
+
+# 98. forwardref
+
+# 99. Create todo app using pure js
+
+
+# 100. Image optimization
+
+  1. Choose modren formats 
+
+    1. WebP / AVIF -> small size and high quality
+    2. png
+    3. jepg
+
+  2. lazy Loading
+
+     <img src="image.jpg" loading="lazy" />
+
+  3. Responsive images
+
+    Diffrent sizes for diffrent screens
+
+  4. Image Compression
+
+  5. use cdn
+
+  6. use svg for icons
+
+
+# 101. LCP (loading speed), FID (interactivity)
+
+  1. lazy load image, cdn, caching, responsive, standard format webP, use svg for icons
+  
+
+  2. code splitting, reducing initial loading time
+
+  3. reduce bundle size
+  4. use caching
+  5. Unnecessary re-renders
+  6. server side rendering
+
+
+# 102. prevent XSS
+
+  1. Do  not use dangerousHTML, use DOMPurify
+  2. CSP -> block inline scripts from unkown source
+  3. use same-site cookies
+  4. avoide token leakage (localstorage , session storage)
+  6. set in http-cookies
+  7. avoide exposing tokens in urls, queryParams
+  8. input validation (FE+BE)
+  9. Rate limiting DDOS
+  10. Avoide inline scripts
+    

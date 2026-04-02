@@ -6,6 +6,7 @@ import Portfolio from "../Portfolio";
 import Todo from "../Todo";
 import PageCenter from "../UI/PageCenter";
 import ConcurrentUI from "../ConcurrentDemos/ConcurrentUI";
+import InfiniteScroll from "../InfiniteScroll";
 
 
 
@@ -22,6 +23,8 @@ const AppRoutes = () => {
       </Suspense>} />
       <Route path="/todo" element={<Todo />} />
       <Route path="/concurrent-ui" element={<ConcurrentUI />} />
+
+      <Route path="/post-infinite" element={<InfiniteScroll />} />
     </Routes>
   )
 }

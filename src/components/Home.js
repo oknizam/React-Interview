@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div style={{ backgroundColor: mode === 'dark' ? "#33335d" : "", padding: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ color: mode === 'dark' ? "#efefef" : "#33335d" }}> Hello React, I am Spidy!!!!</h1>
+        <h1 data-testid="header" style={{ color: mode === 'dark' ? "#efefef" : "#33335d" }}> Hello React, I am Spidy!!!!</h1>
         <ThemeToggle />
         <a href='/about' style={{ color: "#000" }} >About</a>
       </div>
