@@ -17,6 +17,7 @@ import User from './UI/User';
 import ProgressBar from './UI/HorizontalProgressBar';
 import TestHOC from './TestHOC';
 import CounterComponent from './CounterComponent';
+import Card from './Card';
 
 export const ThemeContext = createContext();
 
@@ -97,6 +98,9 @@ const Home = () => {
       <TestHOC name="nizam" />
       <hr />
       <CounterComponent />
+
+      <hr />
+      <Card name={123} city="Davanagere" />
     </div>
   )
 }
