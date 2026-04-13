@@ -18,6 +18,8 @@ import ProgressBar from './UI/HorizontalProgressBar';
 import TestHOC from './TestHOC';
 import CounterComponent from './CounterComponent';
 import Card from './Card';
+import CustomTable from './UI/Table';
+import SearchUser from './SearchUser';
 
 export const ThemeContext = createContext();
 
@@ -101,6 +103,27 @@ const Home = () => {
 
       <hr />
       <Card name={123} city="Davanagere" />
+
+      <hr />
+      <CustomTable columns={
+        [
+          { key: "name", title: "Name" },
+          { key: "role", title: "Role" }]
+      }
+        data={
+          [
+            {
+              name: "Nizam", role: "Front End"
+            },
+            {
+              name: "Rahul", role: "Back End"
+            },
+          ]
+        } />
+
+      <hr />
+      <SearchUser />
+
     </div>
   )
 }
