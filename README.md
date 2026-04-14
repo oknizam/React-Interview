@@ -153,3 +153,87 @@ const name = "Nizam";
 2. handle promises directly (use) => fetch.then(res).catch() , new use(fetchuser()) => error will be handled by nearest error boundry
 
 3. React compliler (optimize performnce)
+
+# SAP Spectacles (SAP fiori) -> Design principles
+
+1. Role based
+
+  1. Apps are dsigned for specific users
+  2. Dashboard and report for Admin
+  3. Task screen for employee
+
+2. Adaptive 
+
+  1. works for all devices (mobile, tablet , desktop)
+  2. Responsive ui
+
+3. Simple
+
+  1. Only necessary information shown
+  2. fever clicks
+
+4. coherent
+
+  1. Same design across all apps
+  2. consistent experience
+
+5. Delightful
+
+  1. smooth animation and faster performence
+
+
+# SAP fiori (UI layer)
+
+1. Built using SAP 5 or OpenUI5
+2. Javascript
+3. HTML5
+4. CSS3
+
+# OPENUI5 
+
+1. It works on MVC architecture
+
+2. Model, view and controller
+3. Model  -> Data
+4. View -> UI (Xml)
+5. controller -> js functions
+6. User -> view -> controller -> update model -> view
+7. OData service which connects FE and BE (GET, POST, PUT, PATCH, DELETE)
+
+
+# Accessbility (aria -> Accessible rich internet application)
+
+1. Screen readers will read website
+2. If we don't provide or used proper elements it will not read properly
+3. blind persons will interact application by pressing keys like (tab, enter, arrowkeys)
+4. We have to use sematic elements
+5. define proper tab index order
+6. if we are using div tags instead button for click add aria-label, role
+7. create input with labels
+8. show dark text in plain background
+9. High contrast text
+10. Use alt text for images
+
+# SEO 
+
+1. web crawls read out html page
+  1. Read
+  2. understand
+  3. Index
+
+2. start with HTML page
+3. CSS and JS
+4. Execute js
+5. store content in search DB (index)
+6. Important tags
+
+  1. h1 - h6
+  2. title
+  3. meta tag
+  4. img alt
+
+7. links
+8. metadata
+
+
+
