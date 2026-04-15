@@ -20,6 +20,7 @@ import CounterComponent from './CounterComponent';
 import Card from './Card';
 import CustomTable from './UI/Table';
 import SearchUser from './SearchUser';
+import { RealTime, StopWatch } from './StopWatch';
 
 export const ThemeContext = createContext();
 
@@ -123,6 +124,9 @@ const Home = () => {
 
       <hr />
       <SearchUser />
+      <hr />
+      <StopWatch />
+      <RealTime />
 
     </div>
   )
