@@ -1,52 +1,65 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-function InfiniteScroll() {
-  const [items, setItems] = useState([]);
+const InfiniteScroll = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const loaderRef = useRef(null);
+  const [hasMore, setHasMore] = useState(true);
+  const ref = useRef(null);
+  const limit = 20;
 
-  // Fetch data
-  const fetchData = async () => {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`
-    );
-    const data = await res.json();
-    setItems(prev => [...prev, ...data]);
-  };
+  const fetchData = useCallback(async () => {
+    try {
+      setLoading(true);
+      let offset = (page - 1) * limit;
+      let res = await fetch(
+        `https://jsonplaceholder.typicode.com/posts?_start=${offset}&_limit=${limit}`
+      );
+      res = await res.json();
+      setData((prev) => [...res, ...prev]);
+      if (res?.length < limit) {
+        setHasMore(false);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  }, [page])
 
   useEffect(() => {
     fetchData();
-  }, [page]);
+  }, [page, fetchData]);
 
-  // Intersection Observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
+  const lastEleRef = useCallback((node) => {
+    if (loading || !hasMore) return;
+
+    if (ref.current) ref.current.disconnect();
+
+    ref.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        setPage(prev => prev + 1);
+        setPage((prev) => prev + 1);
       }
     });
-
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+    if (node) ref.current.observe(node);
+  }, [loading, hasMore]);
 
   return (
-    <div>
-      {items.map(item => (
-        <div key={item.id} style={{ padding: "10px", border: "1px solid #ccc" }}>
-          {item.title}
-        </div>
-      ))}
-
-      {/* Loader */}
-      <div ref={loaderRef} style={{ height: "50px", textAlign: "center" }}>
-        Loading...
-      </div>
-    </div>
+    <>
+      {data.map((item, index) => {
+        if (index === data.length - 1) {
+          return (
+            <div ref={lastEleRef} key={item.id}>
+              {item.title}
+            </div>
+          );
+        } else {
+          return <div key={item.id}>{item.title}</div>;
+        }
+      })}
+      {loading && <div>loading...</div>}
+      {!hasMore && <div>No more data !</div>}
+    </>
   );
-}
-
+};
 export default InfiniteScroll;
